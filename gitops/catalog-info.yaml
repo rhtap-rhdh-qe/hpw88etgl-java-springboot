@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: hpw88etgl-java-springboot-gitops
+  description: This is GitOps manifest for hpw88etgl-java-springboot   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=hpw88etgl-java-springboot
+    backstage.io/kubernetes-id: hpw88etgl-java-springboot 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: hpw88etgl-java-springboot
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:hpw88etgl-java-springboot
